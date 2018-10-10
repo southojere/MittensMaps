@@ -17,7 +17,7 @@ function initMap() {
         }
     })
 
-    var message = prompt("Care to leave a message :3");//TODO add to firebase
+    // var message = prompt("Care to leave a message :3");//TODO add to firebase
 }
 
 loadSpottings = async(map) => {

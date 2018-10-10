@@ -13,6 +13,8 @@
     <meta charset="utf-8">
 
     <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
     <style>
         /* Set the size of the div element that contains the map */
 
@@ -44,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                        <button id="but" class="btn btn-success" onclick="placingSpotting = !placingSpotting">Add Sighting</button>
+                        <button id="but" class="btn btn-success" onclick="addSighting()">Add Sighting</button>
                 </li>
                 <!-- <li class="nav-item">
                         <button id="but" class="btn btn-danger" onclick="removeSpotting()">Remove Sighting</button> 
@@ -60,6 +62,7 @@
         crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKthYC1f2EaGoQt1bGEU68BB2khgNkJUM&callback=initMap">
     </script>
+    <script src="bootbox.min.js"></script>
 </body>
 
 </html>

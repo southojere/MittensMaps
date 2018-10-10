@@ -20,10 +20,20 @@ function initMap() {
         }
     })
 
-    
+
 }
 
-leaveMessage = async()=>{
+function addSighting() {
+    placingSpotting = !placingSpotting;
+    if (placingSpotting) alert("You can now add sightings");
+    else alert("adding sightings now turned off")
+    // bootbox.alert({
+    //     message: "You are now adding sightings",
+    //     className: 'bb-alternate-modal'
+    // });
+}
+
+leaveMessage = async () => {
     var message = prompt("Care to leave a message :3");//TODO add to firebase
     const response = await fetch("https://gitsearch-ff7bc.firebaseio.com/messages.json", {
         method: "POST",
@@ -39,7 +49,7 @@ function placeMarkerAndPanTo(latLng, map) {
         draggable: true
     });
     map.panTo(latLng);
-    
+
 }
 
 
@@ -55,7 +65,7 @@ addMarkerToCollection = async (latLng) => {
     console.log("added")
 }
 
-loadSpottings = async(map) => {
+loadSpottings = async (map) => {
     const fireBaseSpottings = await fetch('https://gitsearch-ff7bc.firebaseio.com/spottings.json?print=pretty').then(res => res.json())
     const keys = await Object.keys(fireBaseSpottings);
     const spottings = await keys.map(key => ({
@@ -63,8 +73,8 @@ loadSpottings = async(map) => {
         lng: fireBaseSpottings[key].lng
     }));
     //now load into map
-    await spottings.forEach((e)=> {
-       new google.maps.Marker({
+    await spottings.forEach((e) => {
+        new google.maps.Marker({
             position: e,
             map: map,
         });

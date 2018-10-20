@@ -19,15 +19,31 @@
         /* Set the size of the div element that contains the map */
 
         #map {
-            height: 98vh;
+            height: 100vh;
             /* The height is 400 pixels */
             width: 100vw;
             /* The width is the width of the web page */
+            position: absolute;
+            top: 133px;
+            left: 0px;
+        }
+
+        @media only screen and (min-width: 700px) {
+            #map {
+                top: 90px;
+            }
+        }
+
+        @media only screen and (min-width: 767px) {
+            #map {
+                top: 55px;
+            }
         }
 
         #but {
             margin-left: 10px;
         }
+
     </style>
 </head>
 
